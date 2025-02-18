@@ -182,7 +182,7 @@ const handelToSendForgotLinkOnUserMail = async (req, res) => {
         const Secret_Key = process.env.AUTH_SECRET_KEY;
         const updatePasswordToken = jwt.sign(payload, Secret_Key, { expiresIn: '5m' });
         
-        const url = `http://localhost:5173/auth/forgot-password?token=${updatePasswordToken}&open=${true}`;
+        const url = `https://vishalkumar07.me/user-management-system/auth/forgot-password?token=${updatePasswordToken}&open=${true}`;
         const emailSent = await sendEmailToUser(email,url);
 
         if(!emailSent){
