@@ -1,10 +1,12 @@
+require("dotenv").config();
 const mysql2 = require("mysql2/promise");
 
 const db  = mysql2.createPool({
-    host: "localhost",
-    user: "root",
-    password: "Vishal@17",
-    database: "mysql_db",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
@@ -19,7 +21,7 @@ const db  = mysql2.createPool({
         console.error('Database connection error:', err);
     }
 })()
-
+mysql://root:CbfKhXWXvOMRrnhrZICXxmXMPMiJDPZM@tramway.proxy.rlwy.net:48949/railway
 
 
 
