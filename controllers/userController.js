@@ -5,32 +5,26 @@ const nodemailer = require('nodemailer');
 // user Login api endpoint http://localhost:8080/api/user/sign-up
 const handelToUserSignUp = async (req, res) => {
     try {
-        // console.log(req.body)
-
         if (!req.body) {
             return res.status(500).json({ mag: 'wrong body parse ' })
-        }
-
+        }       
         const { avatar, first_name, last_name, bio, email, date_of_birth, password, phone_number } = req.body;
-
+        
         if (!first_name || !last_name || !email || !password) {
             return res.status(401).json({ mag: 'user credential are required for sign-up' })
-        }
-
+        }        
         try {
             const signUpUser = await createUser({ avatar, first_name, last_name, bio, email, date_of_birth, password, phone_number })
             return res.status(201).json({ msg: "User created successfully", user: signUpUser });
         } catch (error) {
-            console.error("Error creating user:", error);
-
-
+            console.error("Error creating user:", error);            
+            
             if (error.code === "ER_DUP_ENTRY") {
                 return res.status(409).json({ msg: "Email already exists" });
             }
-
             return res.status(500).json({ msg: "Internal server error while create new user", error: error.message });
         }
-
+        
     } catch (error) {
         return res.status(500).json({ msg: "Internal server error", error: error.message });
     }
