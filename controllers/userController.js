@@ -318,7 +318,7 @@ const updatePassEmailSchema = (url) => {
     <div class="container">
         <div class="header_x">
             <h2>Kortex</h2>
-            <!-- <p class="header_title"><a href="https://vishalkumar07.me">by vishalkumar07.me</a></p> -->
+            <!-- <p class="header_title"><a href="https://vishalkumar1007.github.io">by vishalkumar1007.github.io</a></p> -->
         </div>
         <div class="content">
             <p id="xht">
@@ -326,7 +326,7 @@ const updatePassEmailSchema = (url) => {
             </p>
             <Button id="update_pass_btn"><a href=${url}>Update</a></Button>
             <p id="xht2">Note : This update link is valid for only 5min</p>
-            <p id="xht3">Trouble in update Password ? <a href="https://vishalkumar07.me">report</a></p>
+            <p id="xht3">Trouble in update Password ? <a href="https://vishalkumar1007.github.io">report</a></p>
         </div>
         <div class="footer">
             &copy; 2025 vishalkumar07. All rights reserved.
