@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // app.use(express.urlencoded());
 
-const allowedOrigins = [`http://localhost:5173`, 'https://vishalkumar07.me'];
+const allowedOrigins = [`http://localhost:5173`, 'https://vishalkumar1007.github.io'];
 
 app.use(cors({
   origin(origin, callback) {

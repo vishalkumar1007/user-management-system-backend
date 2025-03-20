@@ -176,13 +176,13 @@ const handelToSendForgotLinkOnUserMail = async (req, res) => {
             first_name: isValidUser[0].first_name,
             last_name: isValidUser[0].last_name,
         }
-        console.log(payload);
 
         
         const Secret_Key = process.env.AUTH_SECRET_KEY;
         const updatePasswordToken = jwt.sign(payload, Secret_Key, { expiresIn: '5m' });
         
-        const url = `https://vishalkumar07.me/user-management-system/auth/forgot-password?token=${updatePasswordToken}&open=${true}`;
+        const url = `${process.env.IS_LIVE==='true'?'https://vishalkumar1007.github.io':'http://localhost:5173'}/user-management-system/auth/forgot-password?token=${updatePasswordToken}&open=${true}`;
+        console.log(url);
         const emailSent = await sendEmailToUser(email,url);
 
         if(!emailSent){
